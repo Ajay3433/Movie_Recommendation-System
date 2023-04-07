@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moviik</title>
+    
+    <link rel = "icon" href = "../static/img/Moviik_logo_s.PNG"  type = "image/x-icon">
+    <!-- link to CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- link to swiper CSS -->
+    <link rel="stylesheet" href="../static/css/swiper-bundle.min.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <!-- logo -->
+            <a href="/" class="logo">
+                <img src="../static/img/Moviik_logog.png" alt="Moviik">
+            </a>
+            
+            <a href="#" class="user">
+                <img src="../static/img/Admin.png" alt="" class="user-img">
+            </a>
+            
+            <!-- Nav Bar -->
+            <div class="navbar">
+                <a href="/" class="nav-link nav-active">
+                    <i class='bx bx-home'></i>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a href="/" class="nav-link">
+                    <i class='bx bxs-hot' ></i>
+                    <span class="nav-link-title">Trending</span>
+                </a>
+                <a href="/" class="nav-link">
+                    <i class='bx bx-compass' ></i>
+                    <span class="nav-link-title">Explore</span>
+                </a>
+                <a href="/" class="nav-link">
+                    <i class='bx bx-tv' ></i>
+                    <span class="nav-link-title">Movies</span>
+                </a>
+                <a href="/recommendation" class="nav-link">
+                    <i class='bx bx-heart' ></i>
+                    <span class="nav-link-title">Recommendation</span>
+                </a>
+            </div>
+        </div>
+    </header> 
+
+
+    <section class="movies container" id="">
+        <!-- HEADING -->
+        <div class="heading">
+            <h2 class="heading-title "></h2>           
+        </div><br><br>
+     <!-- Search Box --><h2> This Movie Recommendation System is Based on Content-based-filtering</h2>
+     <br><br>
+     
+     <form action="/recommendation" method="POST">
+        <select class="form-select" id="movies" name="movies" aria-label="default select example">
+            {% for j in movie_list %}
+            <option value="{{j}}">{{j}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit" class="bttn"><i class='bx bx-search-alt-2'> Search </i></button> 
+    </form>
+    </section>
+    {% if status == True %}
+    <!-- Movies Section Start -->
+    <section class="movies container" id="movies">
+        <!-- HEADING -->
+        <h1>Recommended Movies ( Top 20 ):</h1>
+        <!-- Movies Content -->
+        <div class="movies-content">
+            <!-- Movies Box  -->
+            <div class="movie-box">
+                <img src="{{poster[0]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[0]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <!-- Movies Box 1 -->
+            <div class="movie-box">
+                <img src="{{poster[1]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[1]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <!-- Movies Box 2 -->
+            <div class="movie-box">
+                <img src="{{poster[2]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[2]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <!-- Movies Box 3 -->
+            <div class="movie-box">
+                <img src="{{poster[3]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[3]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <!-- Movies Box 4 -->
+            <div class="movie-box">
+                <img src="{{poster[4]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[4]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[5]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[5]}}</h2>
+                    <span class="movie-type"></span>
+                   
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[6]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[6]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[7]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[7]}}</h2>
+                    <span class="movie-type"></span>
+                   
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[8]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[8]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[9]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[9]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[10]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[10]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[11]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[11]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[12]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[12]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[13]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[13]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[14]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[14]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[15]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[15]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[16]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[16]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[17]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[17]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[18]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[18]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+            <div class="movie-box">
+                <img src="{{poster[19]}}" alt="movie" class="movie-box-img">
+                <div class="box-text">
+                    <h2 class="movie-title">{{movies_name[19]}}</h2>
+                    <span class="movie-type"></span>
+                    
+                </div>
+            </div>
+
+            
+           
+            
+        </div>
+    </section>s
+    <!-- Movies Section End -->
+    {% endif %}
+    <!-- Footer -->
+    <br>
+    <div class="copyright">
+        <p>&#169; Moviik - All Rights Reserved </p>
+    </div>
+
+    <!-- Link Swiper JS  -->
+    <script src="../static/js/swiper-bundle.min.js"></script>
+    <!-- link to JS -->
+    <script src="../static/js/main.js"></script>
+    
+</body>
+</html>
